@@ -1,0 +1,7 @@
+{
+	"name": "Braint",
+	"description": "An Online Planner App",
+	"repository": "https://github.com/JonathanW2018/Braint",
+	"logo": "https://i.imgur.com/rjkmWUI.png",
+	"keywords": ["python", "flask", "braint", "planner"]
+}

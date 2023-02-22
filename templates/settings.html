@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Settings - Braint</title>
+	<link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+	<link rel="stylesheet" href="/static/style.css">
+	<script src="/static/navbar.js" defer></script>
+	<script src="/static/task-manager.js" defer></script>
+	<script src="/static/script.js" defer></script>
+</head>
+<body>
+	
+	<div id="navbar"></div>
+
+	<h1>Settings</h1>
+	<br>
+
+	<form id="settings-form" method="POST">
+		<p>Username</p>
+		<input type="text" name="username" placeholder="Choose a Username" value="{{ settings[0] }}" required>
+
+		<br>
+		<br>
+		<br>
+
+		<a href="/change-password">Change your password</a>
+
+		<br>
+		<br>
+		
+		<a class="danger" href="/reset-account" title="This will clear all your tasks">Reset account</a>
+
+		<br>
+		<br>
+
+		<a class="danger" href="/delete-account">Delete account</a>
+
+		<br>
+		<br>
+		<br>
+
+		<input type="submit" value="Update Settings">
+	</form>
+    
+</body>
+</html>

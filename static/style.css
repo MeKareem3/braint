@@ -1,0 +1,274 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Styles */
+@import url("/static/navbar.css");
+
+* {
+	font-family: 'IBM Plex Sans', sans-serif;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Commonly used */
+hr {
+	width: 90%;
+	margin: auto;
+	border: 2px solid #595959;
+	border-radius: 2px;
+}
+
+h1 {
+	margin: 45px auto auto 315px;
+	text-align: left;
+/* 	position: absolute; */
+}
+
+input, button {
+	text-align: left;
+	border: none;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 7px;
+	outline: none;
+	border-radius: 4px;
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+}
+
+table tr {
+	border: 2px solid #373737;
+}
+
+table tr td {
+	padding: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: #373737;
+	font-weight: bold; 
+}
+
+a.danger {
+	color: crimson;
+}
+
+/* CREATE TASK FORM */
+.create-task-panel {
+	margin: 0;
+	position: fixed;
+	top: 50%;
+	right: 10px;
+	transform: translate(calc(100% + 288px), -50%);
+	width: 550px;/*20vw*/
+	height: 90vh;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.027), 
+							0 6px 15px 0 rgba(0, 0, 0, 0.103);
+	background-color: whitesmoke;
+	z-index: 1;
+	overflow: auto;
+	border-radius: 9px;
+	padding: 20px;
+}
+
+.create-task-panel.show {
+	animation: task-panel 0.7s ease;
+	
+	transform: translate(0%, -50%);
+	outline: none;
+}
+
+@keyframes task-panel {
+	0% {
+		transform: translate(calc(100% + 288px), -50%);
+	}
+	
+	100% {
+		transform: translate(0%, -50%);
+	}
+}
+
+/* Task Elements */
+.task {
+	background-color: whitesmoke;
+	width: 70%;
+	margin-left: 325px;
+	margin-top: 20px;
+	border-radius: 4px;
+	height: 50px;
+	padding: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.027), 
+							0 6px 15px 0 rgba(0, 0, 0, 0.103);
+	cursor: pointer;
+	transition: background-color 0.5s;
+}
+
+.task:hover {
+	text-decoration: line-through;
+	background-color: lightgrey;
+	transition: background-color 0.3s;
+}
+
+.task p {
+	text-align: left;
+	font-size: 16px;
+	pointer-events: none;
+}
+
+.no-repeat {
+	border-left: 3px solid dodgerblue;
+}
+
+/* Message that displays @ bottom left corner */
+#message-div {
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.027), 
+							0 6px 15px 0 rgba(0, 0, 0, 0.103);
+	padding: 15px;
+	width: 200px;
+	height: 50px;
+	z-index: 2;
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	border-radius: 4px;
+}
+
+#message-div p {
+	text-align: left;
+}
+
+#message-div img {
+	transform: translate(350%, -95%);
+	width: 20px;
+	height: 20px;
+}
+
+/* Error message that pops up in center of screen */
+#error {
+	height: 250px;
+	width: 300px;
+	position: fixed;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.027), 
+							0 6px 15px 0 rgba(0, 0, 0, 0.103);
+	border-radius: 9px;
+}
+
+#error-head {
+	background-color: crimson;
+	margin: 0;
+	color: whitesmoke;
+	height: 40%;
+	border-radius: 9px 9px 0px 0px;
+}
+
+#error-head h2 {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#error-body {
+	background-color: rgba(245, 245, 245, 0.95);
+	height: 60%;
+	margin: 0;
+	border-radius: 0px 0px 9px 9px;
+}
+
+#error-body p {
+	position: relative;
+	top: 27%;
+	transform: translateY(-50%);
+}
+
+/* Dismiss Button */
+#dismiss-button {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* All Tasks Page */
+#calendar {
+	width: calc(100vw - 350px);
+	margin-left: 320px;
+}
+
+#all-tasks td {
+	height: 100px;
+	vertical-align: top;
+}
+
+#all-tasks td ul {
+	list-style-type: none;
+}
+
+/* Display task are the list items */
+.display-task {
+	overflow-y: scroll;
+	scrollbar-width: none; 
+	margin: 0;
+}
+
+/* Make scrollbar invisible */
+.display-task::-webkit-scrollbar {
+  display: none;
+}
+
+.display-task {
+	background-color: whitesmoke;
+	width: 75%;
+	border-radius: 4px;
+	padding: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.027), 
+							0 6px 15px 0 rgba(0, 0, 0, 0.103);
+	margin: 10px auto 15px auto;
+	cursor: default;
+}
+
+/* Settings Page */
+#settings-form {
+	width: 50%;
+	margin: 20px auto;
+}
+
+#settings-form input[type="text"] {
+	background-color: whitesmoke;
+	width: 50vw;
+	font-weight: normal;
+}
+
+#settings-form input[type="submit"] {
+	float: right;
+}
+
+#settings-form p {
+	text-align: left;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#settings-form a {
+	float: left;
+}
